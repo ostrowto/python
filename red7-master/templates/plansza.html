@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Red7</title>
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="{{ tlo[-1][1] }}">
+
+    <div id="tlo">
+        {% for karta in tlo %}
+            <div class="karta {{ karta[1] }}">{{ karta[0] }}</div>
+        {% endfor %}
+    </div>
+
+    <div id="gracze">
+        {% for gracz in gracze %}
+            <div class="gracz">
+                <h1>{{ gracz.nazwa }}</h1>
+                <div class="paleta">
+                    {% for karta in palety[gracz.numer] %}
+                        <div class="karta {{ karta[1] }}">{{ karta[0] }}</div>
+                    {% endfor %}
+                </div>
+                <div class="reka">
+                    {% if gracz.numer == tura_gracza %}
+                        {% for karta in rece[gracz.numer] %}
+                            <div class="karta {{ karta[1] }}">
+                                {% if gdzie == 'tlo' %}
+                                    <a href="{{ url_for('rzuc_na_tlo', karta=karta[0]|string+'_'+karta[1]) }}">{{ karta[0] }}</a>
+                                {% elif gdzie == 'paleta' %}
+                                    <a href="{{ url_for('rzuc_na_palete', karta=karta[0]|string+'_'+karta[1]) }}">{{ karta[0] }}</a>
+                                {% else %}
+                                    {{ karta[0] }}
+                                {% endif %}
+                            </div>
+                        {% endfor %}
+                        {% if gdzie == 'tlo'  %}
+                            <div class="karta czarny">
+                                <a href="{{ url_for('wybierz_na_palete') }}">X</a>
+                            </div>
+                        {% elif gdzie == 'paleta' and czy_moze_pominac == True %}
+                            <div class="karta czarny">
+                                <a href="{{ url_for('nastepny') }}">X</a>
+                            </div>
+                        {% endif %}
+                    {% endif %}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+</body>
+</html>

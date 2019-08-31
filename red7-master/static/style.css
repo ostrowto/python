@@ -1,0 +1,88 @@
+.karta a{
+    text-decoration: none;
+}
+.czerwony,
+.karta.czerwony a{
+    background: #ff000b;
+    color: #6f0009;
+}
+
+.pomaranczowy,
+.karta.pomaranczowy a{
+    background: #ff9600;
+    color: #825000;
+}
+
+.zolty,
+.karta.zolty a{
+    background: #fffc00;
+    color: #827d02;
+}
+
+.zielony,
+.karta.zielony a{
+    background: #1bff0e;
+    color: #1b8200;
+}
+
+.blekitny,
+.karta.blekitny a{
+    background: #0be7ff;
+    color: #006582;
+}
+
+.niebieski,
+.karta.niebieski a{
+    background: #0047ff;
+    color: #050082;
+}
+
+.fioletowy,
+.karta.fioletowy a{
+    background: #f158ff;
+    color: #7d0082;
+}
+
+.czarny,
+.karta.czarny a{
+    background: #000000;
+    color: #aaaaaa;
+}
+
+#tlo{
+    margin: 100px;
+    display: flex;
+}
+
+#gracze{
+    display: flex;
+}
+
+#gracze .gracz{
+    border: 1px solid #000000;
+    padding: 10px;
+    margin: 0 100px;
+}
+
+#gracze .gracz .paleta {
+    min-width: 100px;
+    min-height: 100px;
+    display: flex;
+}
+
+#gracze .gracz .reka {
+    min-width: 100px;
+    min-height: 100px;
+    display: flex;
+}
+
+.karta{
+    width: 50px;
+    height: 70px;
+    margin: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+    font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', 'Verdana', sans-serif;
+}
