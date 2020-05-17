@@ -1,0 +1,8 @@
+num1 = int(input('Please your number 1? '))
+num2 = int(input('Please your number 2? '))
+print(20*'-')
+print('Addition: ', '       ', num1 + num2)
+print('Multiplication: ',' ', num1 * num2)
+print('Division: ','       ', num1 / num2)
+print('Substraction: ', '   ',num1 - num2)
+print('Power: ', '          ', num1 ** num2)
