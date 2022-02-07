@@ -2,7 +2,6 @@
 
 # We define the initial auxiliary number for automating the menu selection
 
-
 user_choice = -1
 
 # We create a list of tasks
@@ -17,8 +16,6 @@ def load_existing_list():
         tasks.append(line.strip())
     file.close()
 
-
-
 # The "Show tasks" function is used to display the list of tasks
 def show_tasks():
     task_index = 0
@@ -28,7 +25,7 @@ def show_tasks():
 
 #The "Add tasks" function is used to add a new task to the task list. 
 def add_task():
-    task = input("Please type your new task: ")
+    task = input(str("Please type your new task: "))
     tasks.append(task)
     len_of_tasks = len(tasks) - 1
     print(f"Your new task \"{task}\" has been added to tasks list on position: [{len_of_tasks}]. ")
@@ -41,7 +38,6 @@ def delete_task():
         return
     tasks.pop(task_index)
     print(f"The indicated task number: [{task_index}] has been removed from the task list  ")
-
 
 #The "Save tasks to external file" function - saves lists of tasks to .txt file.
 
@@ -58,7 +54,7 @@ try:
     load_existing_list()
 except:
     pass
-
+    print(" No data to load. ")
 
 # The main loop of the program execution
 
@@ -66,21 +62,17 @@ while user_choice != 5:
 
     if user_choice == 1:
         print("")
-        print("Your current tasks list is: ")
         show_tasks()
         
     if user_choice == 2:
         add_task()
-        print("")
- 
+        
     if user_choice == 3:
         delete_task()
-
+        
     if user_choice == 4:
         save_tasks_to_external_file()
-
-
-
+        
     print("")
     print("Welcome, please use unmbers from 1 to 5 only. Choose your option: ")
     print("1. Show task list ")
